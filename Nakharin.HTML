@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Portfolio | นครินทร์ หอยสังข์</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #faf8ff;
+    color: #302044;
+}
+
+header {
+    background: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px #0000000c;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #7445c6;
+}
+
+nav a {
+    text-decoration: none;
+    color: #49375e;
+    margin-left: 25px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #905be0;
+}
+
+section {
+    padding: 90px 10%;
+}
+
+.home {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(120deg, #fff, #eee5ff);
+}
+
+.home h1 {
+    font-size: 42px;
+    line-height: 1.5;
+}
+
+.home h1 span {
+    color: #8050d0;
+}
+
+.home p {
+    color: #71677d;
+    margin: 20px 0;
+    line-height: 2;
+}
+
+.profile {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#a981ec,#6238ae);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 100px;
+    font-weight: 700;
+    box-shadow: 0 15px 40px #8050d055;
+    flex-shrink: 0;
+}
+
+.btn {
+    display: inline-block;
+    background: #8050d0;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin: 8px 5px 0 0;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #542b9c;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: white;
+    color: #8050d0;
+    border: 1px solid #8050d0;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.title h2 {
+    font-size: 32px;
+    color: #7042bd;
+}
+
+.title p {
+    color: #8b8197;
+    margin-top: 8px;
+}
+
+.about {
+    background: white;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    line-height: 2;
+    color: #6e637c;
+}
+
+.skills {
+    max-width: 750px;
+    margin: 40px auto 0;
+}
+
+.skill {
+    margin-bottom: 22px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.progress {
+    background: #eee7f8;
+    height: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg,#a77ce9,#7042bd);
+    border-radius: 20px;
+}
+
+.portfolio {
+    background: #f5f0ff;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 5px 20px #5d398414;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #7042bd;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #786d86;
+    line-height: 1.9;
+}
+
+.activities {
+    background: white;
+}
+
+.activity {
+    max-width: 750px;
+    margin: 20px auto;
+    padding: 25px;
+    border-left: 5px solid #8050d0;
+    background: #f7f3ff;
+    border-radius: 10px;
+}
+
+.activity h3 {
+    color: #7042bd;
+    margin-bottom: 8px;
+}
+
+.activity p {
+    color: #766b83;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
+    background: #302044;
+    color: white;
+    font-size: 13px;
+}
+
+@media(max-width:768px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .home h1 {
+        font-size: 30px;
+    }
+
+    .profile {
+        width: 190px;
+        height: 190px;
+        font-size: 70px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">NAKHARIN.</div>
+    <nav>
+        <a href="#home">หน้าแรก</a>
+        <a href="#about">แนะนำตัว</a>
+        <a href="#portfolio">ผลงาน</a>
+        <a href="#activities">กิจกรรม</a>
+    </nav>
+</header>
+
+<!-- หน้าแรก -->
+<section class="home" id="home">
+    <div>
+        <h1>
+            สวัสดีครับ<br>
+            ผมชื่อ <span>นครินทร์ หอยสังข์</span>
+        </h1>
+
+        <p>
+            ยินดีต้อนรับเข้าสู่เว็บไซต์ E-Portfolio<br>
+            เว็บไซต์รวบรวมประวัติส่วนตัว ความสามารถ ผลงาน
+            และกิจกรรมต่าง ๆ ของผม
+        </p>
+
+        <a href="#about" class="btn">รู้จักผมมากขึ้น</a>
+        <a href="https://github.com/" target="_blank" class="btn btn-outline">
+            GitHub ↗
+        </a>
+    </div>
+
+    <div class="profile">N</div>
+</section>
+
+<!-- แนะนำตัว -->
+<section class="about" id="about">
+    <div class="title">
+        <h2>แนะนำตัว</h2>
+        <p>ABOUT ME</p>
+    </div>
+
+    <div class="about-content">
+        <p>
+            สวัสดีครับ ผมชื่อ <b>นายนครินทร์ หอยสังข์</b><br>
+            เป็นผู้ที่มีความสนใจในการเรียนรู้และพัฒนาตนเอง
+            มีความสามารถในการพูดคุยและสื่อสารภาษาอังกฤษ
+            พร้อมเปิดรับประสบการณ์ใหม่ ๆ และพัฒนาทักษะ
+            เพื่อเพิ่มศักยภาพของตนเองอยู่เสมอ
+        </p>
+    </div>
+
+    <div class="skills">
+        <div class="title">
+            <h2>ความสามารถของผม</h2>
+        </div>
+
+        <div class="skill">
+            <div class="skill-info">
+                <span>การสื่อสารภาษาอังกฤษ</span>
+                <b>85%</b>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" style="width:85%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-info">
+                <span>การสื่อสารและทำงานร่วมกับผู้อื่น</span>
+                <b>80%</b>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" style="width:80%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-info">
+                <span>การเรียนรู้และแก้ปัญหา</span>
+                <b>75%</b>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" style="width:75%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-info">
+                <span>การใช้เทคโนโลยี</span>
+                <b>70%</b>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" style="width:70%"></div>
+            </div>
+        </div>
+
+        <p style="font-size:12px;color:#999">
+            * ระดับทักษะเป็นข้อมูลตัวอย่าง สามารถปรับเปลี่ยนได้ตามจริง
+        </p>
+    </div>
+</section>
+
+<!-- ผลงาน -->
+<section class="portfolio" id="portfolio">
+    <div class="title">
+        <h2>ผลงานของผม</h2>
+        <p>MY PORTFOLIO</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">💻</div>
+            <h3>เว็บไซต์ E-Portfolio</h3>
+            <p>
+                ผลงานการสร้างเว็บไซต์แนะนำตัว
+                โดยใช้ HTML CSS และ JavaScript
+            </p>
+            <br>
+            <a href="https://github.com/" target="_blank" class="btn">
+                ดูผลงาน GitHub
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🌎</div>
+            <h3>English Communication</h3>
+            <p>
+                ความสามารถในการพูดคุยและสื่อสารภาษาอังกฤษ
+                สามารถนำไปประยุกต์ใช้ในชีวิตประจำวันได้
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🏆</div>
+            <h3>ผลงานอื่น ๆ</h3>
+            <p>
+                พื้นที่สำหรับเพิ่มผลงาน เกียรติบัตร
+                และโปรเจกต์ที่น่าสนใจในอนาคต
+            </p>
+        </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:40px">
+        <a href="https://github.com/" target="_blank" class="btn">
+            เปิดดูผลงานทั้งหมดบน GitHub ↗
+        </a>
+    </div>
+</section>
+
+<!-- กิจกรรม -->
+<section class="activities" id="activities">
+    <div class="title">
+        <h2>กิจกรรม</h2>
+        <p>MY ACTIVITIES</p>
+    </div>
+
+    <div class="activity">
+        <h3>🌐 กิจกรรมพัฒนาทักษะภาษาอังกฤษ</h3>
+        <p>
+            ฝึกฝนการพูดคุยและสื่อสารภาษาอังกฤษ
+            เพื่อเพิ่มความมั่นใจในการใช้ภาษา
+        </p>
+    </div>
+
+    <div class="activity">
+        <h3>💻 กิจกรรมการเรียนรู้เทคโนโลยี</h3>
+        <p>
+            ศึกษาและเรียนรู้การใช้งานเทคโนโลยี
+            รวมถึงการทดลองสร้างเว็บไซต์ด้วยตนเอง
+        </p>
+    </div>
+
+    <div class="activity">
+        <h3>🤝 กิจกรรมพัฒนาตนเอง</h3>
+        <p>
+            เข้าร่วมกิจกรรมเพื่อพัฒนาทักษะ
+            การทำงานร่วมกับผู้อื่นและการเรียนรู้สิ่งใหม่
+        </p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 NAKHARIN HOISANG</p>
+    <p>E-Portfolio | นครินทร์ หอยสังข์</p>
+</footer>
+
+<script>
+// เลื่อนหน้าเว็บอย่างนุ่มนวลเมื่อกดเมนู
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// เอฟเฟกต์แสดงเนื้อหาเมื่อเลื่อนหน้าจอ
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.card, .activity').forEach(item => {
+    item.style.opacity = 0;
+    item.style.transform = 'translateY(20px)';
+    item.style.transition = 'all .7s ease';
+    observer.observe(item);
+});
+</script>
+
+</body>
+</html>
